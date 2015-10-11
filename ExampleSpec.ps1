@@ -1,4 +1,6 @@
-﻿. "C:\Users\Christopher\Desktop\PowerSpec.ps1"
+﻿$spec.rules = @()
+
+. "C:\Users\Christopher\Desktop\PowerSpec.ps1"
 
 addSpec(IsPortListening(80))
 addSpec(IsPortListening(2000))

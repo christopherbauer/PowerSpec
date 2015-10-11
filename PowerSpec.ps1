@@ -21,7 +21,15 @@ function Describe() {
 
 
 function checkSpec() {
-    $spec.rules | Describe
+    $results = $spec.rules
+    $results | Describe
+    if(($results | Where-Object -Property Result -eq $false | measure).Count -gt 0) {
+        Write-Host 'Failed' -ForegroundColor Red
+        Exit 0
+    } else {
+        Write-Host 'Success' -ForegroundColor Green
+        Exit 1
+    }
 }
 
 function IsPortListening($port) {
