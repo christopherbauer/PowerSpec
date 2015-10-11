@@ -14,6 +14,6 @@ addSpec(DirectoryExists "C:\Temp")
 addSpec(FileExists "C:\Temp\File.txt")
 addSpec(IsAnonymousAuthenticationEnabled "IIS:/Sites/Default Web Site/DataVisualization")
 addSpec(IsWindowsAuthenticationEnabled "IIS:/Sites/Default Web Site/DataVisualization")
-
+addSpec(IsWindowsOptionalFeatureInstalled "IIS-BasicAuthentication")
 
 checkSpec
