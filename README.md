@@ -1,8 +1,8 @@
 # PowerSpec
 
-### Wut
+### Environment Spec Check made easy with powershell!
 
-PowerSpec is a lightweight library of powershell scripts for testing machines via powershell. If you need to validate the server's base configuration, use PowerSpec to validate all of the settings needed for a successful deploy from CI to PreProduction to Production.
+PowerSpec is a lightweight library of powershell scripts for testing machine configuration via powershell. If you need to validate a server's base configuration, use PowerSpec to declare all of the settings needed for a successful deploy from CI to PreProduction to Production.
 
 ## Contributing to PowerSpec
 
