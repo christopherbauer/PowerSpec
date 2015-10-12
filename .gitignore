@@ -41,3 +41,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# The built powerspec file, so that someone downloading for the first time must run the build process
+
+PowerSpec.ps1
