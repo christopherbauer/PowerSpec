@@ -6,11 +6,19 @@
     }
 }
 
+function IsServiceInstalled($serviceName) {
+    @{
+        Name = $MyInvocation.MyCommand;
+        Info = $serviceName;
+        Result = (Get-Service -name $serviceName -ErrorAction SilentlyContinue | measure).Count -ge 1
+    }
+}
+
 function IsServiceRunning($serviceName) {
     @{
         Name = $MyInvocation.MyCommand;
         Info = $serviceName;
-        Result = (Get-Service -name $serviceName | measure).Count -eq 1
+        Result = (Get-Service -name $serviceName -ErrorAction SilentlyContinue).Status -eq "Running"
     }
 }
 
