@@ -12,5 +12,6 @@ addSpec(FileExists "C:\Temp\File.txt")
 addSpec(IsAnonymousAuthenticationEnabled "IIS:/Sites/Default Web Site")
 addSpec(IsWindowsAuthenticationEnabled "IIS:/Sites/Default Web Site")
 addSpec(IsWindowsOptionalFeatureInstalled "IIS-BasicAuthentication")
+addSpec(DotNetVersionInstalledMinimum 4 5 0)
 
 checkSpec
