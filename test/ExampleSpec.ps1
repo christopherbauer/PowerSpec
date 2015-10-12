@@ -1,10 +1,6 @@
 ﻿clear-host
 
-. "$PSScriptRoot\PowerSpec.ps1"
-. "$PSScriptRoot\Rules\IISPSpec.ps1"
-. "$PSScriptRoot\Rules\DrivePSpec.ps1"
-. "$PSScriptRoot\Rules\ShellPSpec.ps1"
-. "$PSScriptRoot\Rules\ServicesPSpec.ps1"
+. ".\PowerSpec.ps1"
 
 addSpec(IsPowershellMininum 3)
 addSpec(IsPortListening 80)
