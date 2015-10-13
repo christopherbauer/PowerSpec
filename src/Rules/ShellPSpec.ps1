@@ -1,4 +1,4 @@
-﻿function IsPowershellMininum($major, $minor = 0, $build = 0, $revision = 0) {
+﻿function IsPowershellMinimum($major, $minor = 0, $build = 0, $revision = 0) {
     $version = $PSVersionTable.PSVersion
     @{
         Name = $MyInvocation.MyCommand

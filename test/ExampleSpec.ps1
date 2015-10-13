@@ -2,7 +2,7 @@
 
 . ".\PowerSpec.ps1"
 
-addSpec(IsPowershellMininum 3)
+addSpec(IsPowershellMinimum 3)
 addSpec(IsPortListening 80)
 addSpec(IsInstalled "Microsoft SQL Server 2012 (64 Bit)")
 addSpec(IsServiceInstalled "SQLSERVERAGENT")
