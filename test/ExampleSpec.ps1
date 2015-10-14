@@ -1,6 +1,7 @@
 ﻿clear-host
 
-. ".\PowerSpec.ps1"
+Write-Host "Load PowerSpec lib"
+. "..\PowerSpec.ps1"
 
 addSpec(IsPowershellMinimum 3)
 addSpec(IsPortListening 80)
