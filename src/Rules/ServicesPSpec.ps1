@@ -1,9 +1,18 @@
 ﻿function IsPortListening($port) {
-    @{ 
+    $thisSpecResult = @{
         Name = $MyInvocation.MyCommand;
         Info = $port;
-        Result = (Get-NetTCPConnection -State Listen | Where-Object { $_.LocalPort -eq $port } | measure).Count -eq 1
-    }
+	}
+	
+	if(Get-Command Get-NetTCPConnection -errorAction SilentlyContinue) #windows 8+
+	{
+		$thisSpecResult.Result = (Get-NetTCPConnection -State Listen | Where-Object { $_.LocalPort -eq $port } | measure).Count -eq 1
+	}
+	else { #windows xp+
+		$thisSpecResult.Result = (netstat -an | Select-String -Pattern "TCP.+\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:$port.+0\.0\.0\.0:0.+LISTENING").Line.Length -gt 0
+	}
+	
+	$thisSpecResult
 }
 
 function IsServiceInstalled($serviceName) {
