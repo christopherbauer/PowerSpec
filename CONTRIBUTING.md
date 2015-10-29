@@ -6,4 +6,4 @@
 	
 	If you need to verify that something exists prior to running the actual spec command, use an if statement that returns immediately if the feature does not exist. Provide an explanation of the error in the info object so that the person using it doesn't have to dig too far before determining why the command failed. The early-return error should always fail the build, so just return $false in these situations.
 	
-	Always check the commands on a machine that has the feature before submitting them. I'll try to check commands prior to merging pull requests.
+	Always check the commands on a machine that has the feature before submitting them. I'll try to check commands prior to merging pull requests, but different versions of windows support different things. If you need to include multiple ways of performing a check for multiple versions of windows or whatever, leave a comment beside the statement to remind others in what scenarios your command works.
