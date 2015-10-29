@@ -22,3 +22,19 @@ function IsWindowsOptionalFeatureInstalled($feature) {
         Result = (Get-WindowsOptionalFeature -Online -FeatureName $feature).State -eq "Enabled"
     }
 }
+
+function IsWindowsAuthenticationOverrideAllowed($sitePath) {
+	@{
+		Name = $MyInvocation.MyCommand;
+		Info = $sitePath
+		Result = (Get-WebConfiguration -PsPath $sitePath -Filter /system.webServer/security/authentication/windowsAuthentication -MetaData).Metadata.effectiveOverrideMode -eq "Allow"
+	}
+}
+
+function IsAnonymousAuthenticationOverrideAllowed($sitePath) {
+	@{
+		Name = $MyInvocation.MyCommand;
+		Info = $sitePath
+		Result = (Get-WebConfiguration -PsPath $sitePath -Filter /system.webServer/security/authentication/anonymousAuthentication -MetaData).Metadata.effectiveOverrideMode -eq "Allow"
+	}
+}

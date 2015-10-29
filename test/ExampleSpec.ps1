@@ -14,5 +14,7 @@ addSpec(IsAnonymousAuthenticationEnabled "IIS:/Sites/Default Web Site")
 addSpec(IsWindowsAuthenticationEnabled "IIS:/Sites/Default Web Site")
 addSpec(IsWindowsOptionalFeatureInstalled "IIS-BasicAuthentication")
 addSpec(DotNetVersionInstalledMinimum 4 5 0)
+addSpec(IsWindowsAuthenticationOverrideAllowed "IIS:\Sites\Default Web Site")
+addSpec(IsAnonymousAuthenticationOverrideAllowed "IIS:\Sites\Default Web Site")
 
 checkSpec
